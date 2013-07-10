@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}registretion{% endblock %}
+{% block content %}
+
+  <center><h1 style="margin:auto;">Registration</h1></center>
+  <form action="/register/" method="post">
+  <div id="reg">
+  <div class="reg_details">
+    <label>First Name :</label><input name="firstname" type="text" required style="height:30px; padding:6px; border-radius:5px; margin-left:40px;" />
+    <label style="margin-left:50px">Last Name :</label><input name="lastname" type="text" required style="height:30px; padding:6px; border-radius:5px; float:right; margin-right:30px;" /><br />
+  </div>
+  <div class="reg_details">
+	<label>Username :</label><input name="username" type="text" required style="height:30px; padding:6px; border-radius:5px; margin-left:45px;"></input>
+	<label style="margin-left:50px">E-mail :</label><input name="email" type="email" required style="height:30px; padding:6px; border-radius:5px;  float:right; margin-right:30px;" /><br />
+  </div>
+  <div class="reg_details">
+	<label>Password :</label><input name="password" type="password" required style="height:30px; padding:6px; border-radius:5px; margin-left:45px;" />
+	<label style="margin-left:50px;">Confirm-password :</label><input name="conf_password" type="password" required style="height:30px; padding:6px; border-radius:5px; float:right; margin-right:30px;" /><br />
+  </div>
+  <div id="error"><p style="color:#ff0000">{{ error_msg }}</p></div>
+  </div>
+  <center><input id="register" type="submit" value="Submit"></center>
+  </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}   
+
+  <h2>New Post</h2>
+  <label>Topic</label><br />
+  <textarea id="topic" contenteditable="true"cols="100" rows="2" maxlength="100" autofocus="true"></textarea><br />
+  <label>Content</label><br />
+  <textarea id="content" contenteditable="true" spellcheck="true" cols="100" rows="25"></textarea><br />
+  <input id="postblog" type="button" value="Post" />
+
+  {% load static %}
+  <script src="{% static 'newpost.js' %}"></script>
+
+{% endblock %}

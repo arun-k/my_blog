@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Bluefish 2.2.2" >
+    <meta name="dcterms.created" content="Wed, 29 May 2013 20:54:56 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>home</title>
+    
+    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#FFFFFF;
+      background-image:'/static/Blogs.jpg';
+      background-size: cover;
+      background-repeat:no-repeat;
+    }
+	#enter{
+	  position:absolute;
+	  top:500px;
+	  left:350px;
+	  width:200px
+	  height:200px;
+	}
+	#usr{
+	  position:absolute;
+	  top:10px;
+	  left:10px;
+	}
+	#pswd{
+	  position:absolute;
+	  top:70px;
+	  left:10px;
+	}
+	#signin{
+	  position:absolute;
+	  top:130px;
+	  left:10px;
+	}
+	#reg{
+	  position:absolute;
+	  top:130px;
+	  left:180px;
+	}
+
+	
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  </head>
+  <body>
+  
+    <div id="enter">
+    <form>
+	 <div id="usr">
+	  Username<input id="username" type="text" ></input></div>
+	  <div id="pswd">
+	  Password<input id="password" type="password" ></input></div>
+	  <input id="signin" type="button" value="Sign In" />
+	  <a id="reg" href="/register/">Register</a>
+	</form>
+	</div>
+  {% load static %}
+  <script src="{% static 'home.js' %}"></script>
+  </body>
+</html>

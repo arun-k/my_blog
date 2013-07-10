@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Bluefish 2.2.2" >
+    <meta name="dcterms.created" content="Thu, 06 Jun 2013 11:44:03 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>blogpost</title>
+    
+    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#FFFFFF;
+    }
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <img src="blog.jpg" alt="blog" height="100px" width="100px" style=" position:absolute; right:100px" />
+    <label>Topic</label><br />
+	 <textarea id="topic" cols="100" rows="2" maxlength="50" autofocus="true"></textarea><br />
+	 <label>Content</label><br />
+	 <textarea contenteditable="true" spellcheck="true" cols="100" rows="25" maxlength="5000000"></textarea><br />
+	 <input id="postblog" type="button" value="Post" />
+  </body>
+</html>

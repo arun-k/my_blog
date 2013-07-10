@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Post View{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+  <h1>Welcome {{ user.first_name|capfirst}} {{user.last_name|capfirst}}</h1>
+  <a href="/newpost/" style="position:absolute; right:250px">New Post</a>
+  <a href="/logout/" style="position:absolute;right:150px">Logout</a>
+  <a href="/viewposts/">Home</a>
+  {% else %}
+  <a href="/">Home</a>
+{% endif %}
+  <div class="post">
+    <div class="post_topic">
+    <center><h2 style=" font-size:35px; margin:auto;"><big>{{ post.topic }}</big></h2></center></div>
+    <h6 class="created"><i>on {{ post.created }}</i></h6>
+    <p class="content"><big>{{ post.content|linebreaks }}</big><p>
+  </div>
+  <h3 style="width:75%; margin-bottom:15px; margin-top:20px; margin-left:auto; margin-right:auto;">Comments</h3> 
+  {% for cmnt in cmnts %}
+  <div class="comments">
+    <h4>{{ cmnt.name }}</h4>
+    <h6>{{ cmnt.date }}</h6><hr />
+    <p>{{ cmnt.body|linebreaks }}<p>
+  </div>
+  {% empty %}
+     <center><h4>No Comments!!</h4></center>
+  {% endfor %}
+  <h3 style="width:75%; margin-bottom:15px; margin-top:20px; margin-left:auto; margin-right:auto;">Add Comment</h3>
+  <div class="cmnt_entry">
+    <form action="/post/{{ post.id }}/" method="post">
+      <label>Name</label><br />
+      <textarea name="name" cols=75 rows=1 style="height:30px; padding:6px; border-radius:5px"></textarea><br />
+      <label>Comment</label><br />
+      <textarea name="body" cols=75 rows=10 style="padding:6px; border-radius:5px;"></textarea><br />
+      <input id="post" type="submit" value="Post"></input>
+	</form>
+  </div>
+
+
+{% endblock %}

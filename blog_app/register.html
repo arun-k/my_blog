@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}registretion{% endblock %}
+{% block content %}
+
+  <h2>Registration</h2>
+  <form style="width:150px;">
+    First Name<input id="firstname" type="text" /><br />
+    Last Name<input id="lastname" type="text" /><br />
+    Username<input id="username" type="text"></input><br />
+    E-mail<input id="email" type="text" /><br />
+    Password<input id="password" type="password" /><br />
+    Confirm-password<input id="conf_password" type="password" /><br />
+    <input id="register" type="button" value="Submit" />
+  </form>
+
+  {% load static %}
+  <script src="{% static 'register.js' %}"></script>
+
+{% endblock %}

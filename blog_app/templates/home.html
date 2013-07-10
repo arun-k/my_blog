@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>home</title>
+    <style type="text/css">
+    
+    body {
+      background: #F0E68C;
+    }
+	#enter{
+	  margin:auto;
+	  width:35%;
+	  height:auto;
+	  padding:20px;
+	  border:solid 2px;
+	  background:#A9A9A9;
+	  border-color:#ffffff;
+	  box-shadow: 10px 10px 5px #888888;
+	}
+	
+	#top{
+	  border:solid;
+	  margin:auto;
+	  alignment-adjust:central;
+	  width:35%;
+	  padding:10px 20px;
+	  border-top-left-radius:25px;
+	  border-top-right-radius:25px;
+	  background:#000000;
+	  color:#ffffff;
+	  box-shadow: 10px 10px 5px #888888;
+	}
+	
+	#box{
+	  margin:auto; 
+	  margin-top:150px;
+	}
+
+
+	
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  </head>
+  <body>
+    <div id="viewposts" style=" margin-top:10; position:absolute; top:20px; right:50px">
+      <a href="/viewposts/"><i><big>View Posts</big></i></a>
+    </div>
+    <div id="archive" style=" margin-top:10; position:absolute; top:20px; right:200px">
+      <a href="/archive/"><i><big>Archive</big></i></a>
+    </div>
+    <div id='box'>
+    <h1 id="top"><center>Sign-In</center></h1>
+    <div id="enter">	
+    <form action="/" method="post">
+	<center>
+	 <div id="usr" style="margin:auto; padding:5px">
+	  <label>Username</label><input name="username" type="text" required style="height:25px; padding:3px; border-radius:5px; margin-left:20px;"></input></div></center>
+	  <center><div id="pswd" style="margin:auto; padding:5px;">
+	  <label>Password</label><input name="password" type="password" required style="height:25px; padding:3px; border-radius:5px; margin-left:20px;" ></input></div></center>
+	  <div style="margin:auto;padding:5px; width:60%;">
+	  <input id="signin" type="submit" value="Sign In"  style="float:right; height:30px">
+	  <a id="reg" href="/register/" style="margin-left:80px">Register</a></div>
+	  <div id="error"><p style="color:#ff0000">{{ error_msg }}</p></div>
+	</form>
+	</div>
+  </div>
+  </body>
+</html>

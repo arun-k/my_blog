@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Bluefish 2.2.2" >
+    <meta name="dcterms.created" content="Thu, 06 Jun 2013 07:33:42 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>user home</title>
+    
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background-image:url('wood.jpg'); background-repeat:repeat;">
+    <img src="blog1.jpg" alt="blog" height="100px" width="100px" style=" position:absolute; right:100px" />
+    <label style="position:absolute; top:100px; left:50px; font-family:cursive; font-size:large;">Previous Posts</label>
+	<div id="blogs" style="position:absolute; top:150px; left:50px; width:500px">
+	    <h1>{{blogs.topic}}</h1><h6>{{blogs.date}}</h6>
+		<p style="font-size:large;">{{blogs.content}}</p>
+		<a href="\{{blogs.id}}">edit</a>
+	  {%empty%}
+	    <p>No Posts yet!!!!</p>
+	  {%endfor%}
+	</div>
+	<div id="newpost" style="position:absolute; left:50px; top:50px">
+	  <a href="\blogpost">New Post</a>
+	</div>
+  </body>
+</html>

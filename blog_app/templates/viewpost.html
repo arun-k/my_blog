@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Viewpost{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Welcome {{ user.first_name|capfirst}} {{user.last_name|capfirst}}</h1>
+  <a href="/{{ user.username }}/posts/" style="position:absolute; right:350px">My Posts</a>
+  <a href="/newpost" style="position:absolute; right:250px">New Post</a>
+  <a href="/logout/" style="position:absolute;right:150px">Logout</a>
+{% else %}
+  <a href="/">Home</a>
+{% endif %}
+  <h2>Recent Posts</h2>
+  {% for post in object_list %}
+  <div class="posts">
+    <div class="post_topic">
+    <center><h2 style=" font-size:40px; margin:auto;">{{ post.topic }}</h2></center></div>
+    <h6><i>on {{ post.created }}</i></h6>
+    <p><big>{{ post.content|safe|linebreaks }}</big></p>
+	<a href="/post/{{ post.id }}">>>view post</a>
+  </div>
+  {% empty %}
+    <hr />
+	<center><h1>No Posts!!!</h1></center>
+	<hr />
+  {% endfor %}
+{% endblock %}

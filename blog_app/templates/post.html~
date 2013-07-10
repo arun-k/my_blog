@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <div id='title'>
+  <h2>{{ post.topic }}</h2>
+  </div>
+  <div id="created">
+  on {{ post.created }}
+  </div>
+  
+  <div id="content">
+  {{ post.content }}
+  </div>
+  <hr />
+  <h3>Comments</h3>
+  {% for cmnt in cmnts %}
+    <h4>{{ cmnt.name }}</h4><h6>on {{ cmnt.date }}</h6>
+    {{ cmnt.body }}
+    <br />
+    <br />
+  {% empty %}
+    <h2><center><big>No Comments</big></center></h3>
+  {% endfor %}
+
+<div>
+  <label>Name:</label><br />
+  <textarea id="cmnt_name" cols=100 rows=1 maxlength="50"></textarea><br />
+  <label>Comment:</label><br />
+  <textarea id="cmnt_body" cols=100 rows=10 ></textarea><br />
+  <input id="postcmnt" type="button" value="Post" />
+</div>
+{% load static %}
+<script src="{% static 'post_cmnt.js' %}"></script>
+{% endblock %}
+

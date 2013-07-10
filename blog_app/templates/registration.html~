@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>registration</title>
+</head>
+<body>
+  <img src="blog.jpg" alt="blog" height="100px" width="100px" style=" position:absolute; right:100px" />
+  <h2>Registration</h2>
+  <form style="width:150px;">
+    Username<input id="username" type="text"></input><br />
+    E-mail<input id="email" type="text" /><br />
+	Password<input id="password" type="password" /><br />
+	Confirm-password<input id="conf_password" type="password" /><br />
+	<input id="register" type="button" value="Submit" />
+  </form>
+  <script type="text/javascript">
+    var usrname=document.getElementById("username");
+	var passwrd=document.getElementById("password");
+	var email=document.getElementById("email");
+	var conf_passwrd=document.getElementById("conf_password")
+	$("#register").click(function(){
+	  if(conf_passwrd!=passwrd){
+	    alert("Oops!!! Passwords doesn't match!!!");
+	  }
+	  else
+	  {
+	    $.post("/register",{usrname:usrname,email:email,passwrd:passwrd},function(status){
+		  if(status=='success'){
+		    alert("Successfully Registered!!!")
+		  }
+		});
+	  }
+	});
+  </script>
+</body>
+</html>

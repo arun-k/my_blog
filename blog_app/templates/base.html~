@@ -1,0 +1,12 @@
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body style="background-image:url(/static/wood.jpg); background-repeat:repeat;">
+  <img src="/static/blog1.jpg" alt="blog" height="100px" width="100px" style=" position:absolute; right:20px" />
+  {% block content %}
+
+  {% endblock %}
+</body>
+</html>

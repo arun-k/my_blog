@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}archive{% endblock %}
+
+{% block content %}
+  <h1>Index</h1>
+  <a href="/" style="position:absolute;right:150px">Home</a>
+  {% for post in posts %}
+    <ul>
+      <li><a href="/post/{{ post.id }}"><big>{{ post.topic }}</big></a> on {{ post.created }} by <a href="/{{ post.username }}/posts"><big>{{ post.username }}</big></a></li>
+    </ul>
+  {% endfor %}
+{% endblock %}

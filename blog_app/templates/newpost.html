@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}   
+
+  <a id="gohome" href="/viewposts/">Home</a>
+  <div style="margin:auto; width:80%;">
+    <h2>New Post</h2>
+	<p style="color:#FF0000">{{error_msg}}</p>
+    <form action="/newpost/" method="post">
+      <div id="date" style=" float:right;">
+        <label>Published on:</label><br />
+        <input name="created" type="date"></input>
+      </div>
+      <label>Topic</label><br />
+      <textarea name="topic" contenteditable="true" cols="100" rows="1" maxlength="100" autofocus="true" style="border-radius:5px; padding:5px;"></textarea><br />
+      <label>Content</label><br />
+      <textarea name="content" contenteditable="true" spellcheck="true" cols="100" rows="25" style="border-radius:10px; padding:15px;"></textarea><br />
+      <input class="postblog" type="submit" value="Post" />
+    </form>
+  </div>
+
+
+{% endblock %}

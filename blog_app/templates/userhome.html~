@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+	
+{%block title%}userhome{% endblock %}
+
+{% block content %}
+
+  <h2>Welcome {{ username }}</h2>
+  <h2><big>Posts</big></h2>
+  <a href="/user/{{ username }}/newpost" style="position:absolute; right:200px">New Post</a>
+  {%for blogs in usr%}
+
+    <h1><a href="/user/{{ username }}/{{ blogs.id }}">{{ blogs.topic }}</a></h1><h6>{{ blogs.created }}</h6>
+    <p style="font-size:large;">{{ blogs.content|safe|linebreaks }}</p><br />
+    <a href="/user/{{ blogs.username }}/postedit/{{ blogs.id }}">edit</a>
+    {% empty %}
+    <h2><center><big>No Posts</big></center></h3>
+    
+  {%endfor%}
+
+{% endblock %}
